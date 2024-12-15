@@ -1,26 +1,27 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 12/15/2024 01:12:11 PM
-// Design Name: 
-// Module Name: program_counter
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+module program_counter #(
+    parameter  PROG_VALUE = 3,
+    parameter n = 8
+)
+(
+    input logic clk,
+    input logic reset_n,
+    input logic en,
+    output logic [n-1:0] count
+);
 
-module program_counter(
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (!reset_n)      
+            count <= 0;     
+         else if (en)  
+             if (count <= PROG_VALUE -1 )
+                count <= count + 1;
+            else 
+                  count <= 0;     
 
-    );
+    end
+    
+    
+
 endmodule
