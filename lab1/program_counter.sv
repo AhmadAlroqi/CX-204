@@ -1,14 +1,12 @@
 `timescale 1ns / 1ps
 
 module program_counter #(
-    parameter  PROG_VALUE = 3,
-    parameter n = 8
-)
+    parameter  PROG_VALUE = 3)
 (
     input logic clk,
     input logic reset_n,
     input logic en,
-    output logic [n-1:0] count
+    output logic [3:0] count
 );
 
     always_ff @(posedge clk or negedge reset_n) begin

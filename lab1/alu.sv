@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module alu  #(parameter int ALU_WIDTH = 16 ) 
+module alu  #(parameter  ALU_WIDTH = 16 ) 
 (
     input  logic [ALU_WIDTH-1:0] a, 
     input  logic [ALU_WIDTH-1:0] b, 
@@ -17,8 +17,9 @@ module alu  #(parameter int ALU_WIDTH = 16 )
             2'b01: result = a - b; 
             2'b10: result = a & b; 
             2'b11: result = a | b;
-            default: result = 0; 
+            default: result = 'bx; 
         endcase
-
     end
+   
+    
 endmodule
