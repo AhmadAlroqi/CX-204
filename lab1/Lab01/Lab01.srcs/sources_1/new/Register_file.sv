@@ -33,7 +33,7 @@ input logic [REGF_WIDTH -1:0] Data_in
      reg [REGF_WIDTH-1:0] register_file [4];
         
    
-   initial $readmemb("register_data.bin", register_file);  
+   initial $readmemb("/home/it/Downloads/CX-204-Lab1/support_files/register_data.bin", register_file);  
         
 always @(posedge clk , negedge reset)  begin
    if(~reset)begin
@@ -42,14 +42,13 @@ always @(posedge clk , negedge reset)  begin
     register_file [2] =0 ; 
     register_file [3] =0 ; end
 
-   if(write)
+   if(write & ~ (select_write ==0) )
    register_file[select_write] = Data_in  ; 
     
     end
 
 
 
- if (write )
 assign out1 = register_file[select1] ; 
 assign out2 = register_file[select2] ; 
 
