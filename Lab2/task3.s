@@ -1,6 +1,7 @@
+
 #Task3.2
-addi x9,x0,5
-addi x5,x0,3
+addi x9,x0,5 #enter the input 
+addi x5,x0,3 #toggle 
 addi x6,x0,1
 
 sll x8,x6,x5
