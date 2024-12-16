@@ -8,3 +8,9 @@ add a1 ,x0, x5
 
 li a0, 1
 ecall 
+
+
+li x5, 15#15
+andi x10,x5,1
+addi a1, x10,0
+ecall 
