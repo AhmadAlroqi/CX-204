@@ -25,6 +25,24 @@ srli x6,x5,1
 xor x5,x5,x6
 andi x10,x5,1
 
+
+#Task3.4
+li x5, 0xABCDFFFF
+li x6,0xFF
+#mulit
+li x7,2
+slli x7,x7,3
+
+sll x6,x6,x7
+and x10,x5,x6
+
+
+
+
+#print 
+addi a1, x10,0
+li a0, 1
+ecall
 #print 
 addi a1, x10,0
 li a0, 1
