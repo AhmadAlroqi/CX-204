@@ -37,6 +37,18 @@ sll x6,x6,x7
 and x10,x5,x6
 
 
+#Task3.5
+li x5, 0xABCDFFFF
+li x6,0xFF
+#mulit
+li x7,2
+slli x7,x7,3
+
+sll x6,x6,x7
+and x10,x5,x6
+
+slli x10,x10,8
+srai x10 ,x10,24
 
 
 #print 
