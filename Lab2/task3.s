@@ -50,11 +50,19 @@ and x10,x5,x6
 slli x10,x10,8
 srai x10 ,x10,24
 
+#Task3.6
+li x5, 9
+li x6, 10     
 
-#print 
+sub x7, x5, x6         
+srli x10, x7, 31      
+xor x10, x10, x0 
+
 addi a1, x10,0
 li a0, 1
 ecall
+
+
 #print 
 addi a1, x10,0
 li a0, 1
