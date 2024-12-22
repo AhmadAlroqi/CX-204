@@ -4,7 +4,6 @@ vector2: .byte 9, 10, 11, 12, 13, 14, 15, 16
 result : .byte 0, 0, 0, 0, 0, 0, 0, 0
 
 .text
-.globl main
 main:
     li x5, 0
     li x6, 8
