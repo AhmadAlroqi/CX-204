@@ -5,7 +5,7 @@ array: .word 1,2,3,4,5,6,7,8,9
 .text
 main:
 li t5,0 # should go 0-9
-li t6,9  #9 (dont touch)
+li t6,4 #9 (dont touch)
 la t3, array
 addi sp, sp, -4 
 
