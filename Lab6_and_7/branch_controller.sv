@@ -1,5 +1,23 @@
 `timescale 1ns / 1ps
-
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 12/26/2024 02:29:18 PM
+// Design Name: 
+// Module Name: branch_controller
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 module branch_controller(
     input logic less,               // Indicates if rs1 < rs2 (signed)
@@ -25,6 +43,5 @@ module branch_controller(
     end
 
 endmodule
-
 
 
