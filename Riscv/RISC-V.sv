@@ -4,7 +4,7 @@ module data_path(
     input clk, reset,                // Clock and reset signals
     input logic branch,              // Control signal from main_control
     input logic mem_write,           // Control signal from main_control
-    input logic mem_to_reg,          // Control signal from main_control
+    input logic [2:0]mem_to_reg,          // Control signal from main_control
     input logic alu_src,             // Control signal from main_control
     input logic reg_write,           // Control signal from main_control
     input logic [3:0] alu_ctrl,      // ALU control signal from main_control
@@ -122,11 +122,31 @@ module data_path(
     );
 
     // MUX for register data input
-    mux_2to1 #(.WIDTH(32)) Reg_data_in (
-        .in0(alu_result),
-        .in1(read_data),
-        .sel(mem_to_reg),
+//    mux_2to1 #(.WIDTH(32)) Reg_data_in (
+//        .in0(alu_result),
+//        .in1(read_data),
+//        .sel(mem_to_reg),
+//        .out(reg_datain)
+//    );
+    
+ logic [31:0] M4Result;
+
+    mux_4to1 #(
+    .WIDTH(32)  // Width parameter set to 32
+) MUXF4 (
+    .in0(pc4),
+    .in1(pcoffset),
+    .in2(alu_result),
+    .in3(read_data),
+    .sel(mem_to_reg[1:0]),
+    .out(M4Result)
+);
+
+mux_2to1 #(.WIDTH(32)) Reg_data_in (
+        .in0(M4Result),
+        .in1(imm),
+        .sel(mem_to_reg[2]),
         .out(reg_datain)
     );
-
+    
 endmodule

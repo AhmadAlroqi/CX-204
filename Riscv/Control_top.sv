@@ -7,13 +7,13 @@ module main_control(
     input logic zero,               // Indicates if rs1 == rs2
     output logic branch,            // Branch control signal
     output logic mem_write,         // Memory write control signal
-    output logic mem_to_reg,        // Memory-to-register control signal
+    output logic [2:0]mem_to_reg,        // Memory-to-register control signal
     output logic alu_src,           // ALU source control signal
     output logic reg_write,         // Register write control signal
     output logic [3:0] alu_ctrl,    // ALU control signal
     output logic pc_sel             // Program counter select signal; 1 to branch
 );
-    logic [2:0] alu_op;      // ALU operation control signal
+    logic [1:0] alu_op;      // ALU operation control signal
 
 
     // Instantiation of alu_control module

@@ -10,7 +10,7 @@ module rv32i_top(
     logic [2:0] func3;              // func3 signal
     logic branch;                   // Branch control signal
     logic mem_write;                // Memory write control signal
-    logic mem_to_reg;               // Memory-to-register control signal
+    logic [2:0] mem_to_reg;               // Memory-to-register control signal
     logic alu_src;                  // ALU source control signal
     logic reg_write;                // Register write control signal
     logic [3:0] alu_ctrl;           // ALU control signal
