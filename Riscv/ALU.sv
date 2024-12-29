@@ -26,7 +26,7 @@ module ALU #(parameter ALU_WIDTH = 16) (
         endcase
     end
 
-    assign zero = !(rd == 0);
+    assign zero = (rd == 0);
     assign less = rs1< rs2;
     
 

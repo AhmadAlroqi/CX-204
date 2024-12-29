@@ -10,13 +10,15 @@ module main_control(
     output logic mem_to_reg,        // Memory-to-register control signal
     output logic alu_src,           // ALU source control signal
     output logic reg_write,         // Register write control signal
-    output logic [1:0] alu_op,      // ALU operation control signal
     output logic [3:0] alu_ctrl,    // ALU control signal
     output logic pc_sel             // Program counter select signal; 1 to branch
 );
+    logic [2:0] alu_op;      // ALU operation control signal
+
 
     // Instantiation of alu_control module
-    alu_control ac (
+    alu_control ac(
+        .alu_op(alu_op),
         .func7(func7),            // Connect func7 input
         .func3(func3),            // Connect func3 input
         .alu_ctrl(alu_ctrl)       // Connect ALU control output

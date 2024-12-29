@@ -13,7 +13,6 @@ module rv32i_top(
     logic mem_to_reg;               // Memory-to-register control signal
     logic alu_src;                  // ALU source control signal
     logic reg_write;                // Register write control signal
-    logic [1:0] alu_op;             // ALU operation control signal
     logic [3:0] alu_ctrl;           // ALU control signal
     logic less;                     // Indicates if rs1 < rs2 (signed)
     logic zero;                     // Indicates if rs1 == rs2
@@ -28,12 +27,14 @@ module rv32i_top(
         .mem_to_reg(mem_to_reg),    // Connect memory-to-register control signal from main_control
         .alu_src(alu_src),          // Connect ALU source control signal from main_control
         .reg_write(reg_write),      // Connect register write control signal from main_control
-        .alu_op(alu_op),            // Connect ALU operation control signal from main_control
         .alu_ctrl(alu_ctrl),        // Connect ALU control signal from main_control
         .opcode(opcode),            // Output instruction opcode to main_control
         .func7(func7),              // Output func7 signal to main_control
         .func3(func3),   
-        .pc_sel(pc_sel)            // Output func3 signal to main_control
+        .pc_sel(pc_sel),
+        .less(less),                // Connect less signal from data_path or ALU
+        .zero(zero)  
+                   // Output func3 signal to main_control
     );
 
     // Instantiation of main_control module (includes branch_controller functionality)
@@ -48,7 +49,6 @@ module rv32i_top(
         .mem_to_reg(mem_to_reg),    // Output memory-to-register control signal to data_path
         .alu_src(alu_src),          // Output ALU source control signal to data_path
         .reg_write(reg_write),      // Output register write control signal to data_path
-        .alu_op(alu_op),            // Output ALU operation control signal to data_path
         .alu_ctrl(alu_ctrl),        // Output ALU control signal to data_path
         .pc_sel(pc_sel)             // Output program counter select signal
     );

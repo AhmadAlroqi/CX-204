@@ -7,21 +7,21 @@ module data_path(
     input logic mem_to_reg,          // Control signal from main_control
     input logic alu_src,             // Control signal from main_control
     input logic reg_write,           // Control signal from main_control
-    input logic [1:0] alu_op,        // Control signal from main_control
     input logic [3:0] alu_ctrl,      // ALU control signal from main_control
     output logic [6:0] opcode,       // Instruction opcode
     output logic func7,              // func7 signal
     output logic [2:0] func3,         // func3 signal
-    input logic pc_sel
+    input logic pc_sel,
+    output logic zero,less
+
 );
     // Instruction fields
     logic [31:0] ins; 
     assign opcode = ins[6:0];
-    assign func3 = ins[30];
-    assign func7 = ins[14:12];
+    assign func7 = ins[30];
+    assign func3 = ins[14:12];
 
     // PC and immediate signals
-    logic zero,less;
     logic [31:0] pcin, pcout, imm; 
     wire [31:0] pc4, pcoffset;
 
@@ -110,16 +110,16 @@ module data_path(
 
     );
 
-    // Data memory
-    wire [31:0] read_data;
-    data_mem data_memory_inst (
-    .clk(clk),           // Connect to clock signal
-    .write_enable(mem_write),  // Connect to write enable signal
-    .address(alu_result),       // Connect to address input
-    .data_in(regout2),       // Connect to data input
-   // .read_enable(),   // Connect to read enable signal
-    .data_out(read_data)       // Connect to data output
-);
+     logic [31:0] read_data;
+      Data_memory data_memory_inst(
+        .clk(clk),
+        .resetn(reset),
+        .memwrite(mem_write),
+        .addr(alu_result),
+        .load_type(func3),
+        .wdata(regout2),
+        .rdata_word(read_data)
+    );
 
     // MUX for register data input
     mux_2to1 #(.WIDTH(32)) Reg_data_in (
