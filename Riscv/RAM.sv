@@ -34,9 +34,10 @@ module Data_memory(
     reg [31:0] dmem[0:1023];
     
     always@(*) begin
-    if (load_type) begin
-        case (load_type[1:0])
+//    if (load_type) begin
+        case (load_type[2:0])
         3'b010:rdata_word = dmem[addr[31:2]]; // load word
+     
         3'b001: begin                // load half word
             case (addr[1])
                 1'b0: rdata_word = dmem[addr[31:2]][15:0];
@@ -52,7 +53,7 @@ module Data_memory(
                 endcase
                 end
          endcase
-         end
+//         end
          
     end
     
@@ -65,7 +66,7 @@ module Data_memory(
         end
         
         else if (memwrite == 1)
-            case (load_type[1:0])
+            case (load_type[2:0])
                 3'b010: dmem[addr[31:2]] = wdata; // store word
                 3'b001: begin            // store half word
                     case (addr[1])
