@@ -11,17 +11,20 @@ module register_file #(parameter REGF_WIDTH=8,REGF_DEPTH = 32) (
 );
     
     reg [31:0] register_file [0:31];
+    assign register_file[0]=0;
     always @(posedge clk or negedge reset) begin
         if (!reset) begin
            int i;
-            for (i = 0; i < REGF_DEPTH; i = i + 1) begin
+            for (i = 1; i < REGF_DEPTH; i = i + 1) begin
               // register_file[i] <= {REGF_WIDTH{1'b0}};
                register_file[i] <= '{default: 0};
 
             end
         end
         else if (enW) begin
-            register_file[RD] <= Data_in;
+            if (RD > 0) begin
+                register_file[RD] <= Data_in;
+            end
         end
     end
     
