@@ -1,8 +1,8 @@
 .text
 
 main: 
-li t6, 9  # Input for Fibonacci
-
+li t6, 6 # Input for Fibonacci
+li sp,0x400
 jal fibbo
 jal print
 
