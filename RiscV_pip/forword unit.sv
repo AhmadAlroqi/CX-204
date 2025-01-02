@@ -48,9 +48,9 @@ module forword_unit(
         forwordB = 2'b10;
 
     // MEM Hazard: Forward from WB stage
-    if (regw_wb && (rd_wb != 0) &&        !(regw_mem && (rd_mem != 0) && (rd_mem == rs1))       && (rd_wb == rs1))
+    if (regw_wb && (rd_wb != 0) &&        !(regw_mem && (rd_mem != 0) && (rd_mem == rs1))  && (rd_wb == rs1))
         forwordA = 2'b01;
-    if (regw_wb && (rd_wb != 0) &&       !(regw_mem && (rd_mem != 0) && (rd_mem == rs2))     &&  (rd_wb == rs2))
+    if (regw_wb && (rd_wb != 0) &&       !(regw_mem && (rd_mem != 0) && (rd_mem == rs2))   &&  (rd_wb == rs2))
         forwordB = 2'b01;
 end
 
