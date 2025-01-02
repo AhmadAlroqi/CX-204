@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_rv321_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_rv321" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="59833333fs"></ZoomStartTime>
+      <ZoomEndTime time="120033334fs"></ZoomEndTime>
+      <Cursor1Time time="89133000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="172"></NameColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="36" />
+   <wvobject type="logic" fp_name="/tb_rv321/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv321/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider3" type="divider">
+      <obj_property name="label">RF</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/RS">
+      <obj_property name="ElementShortName">RS[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RS[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/RT">
+      <obj_property name="ElementShortName">RT[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RT[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/out1">
+      <obj_property name="ElementShortName">out1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/out2">
+      <obj_property name="ElementShortName">out2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/RD">
+      <obj_property name="ElementShortName">RD[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RD[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/Data_in">
+      <obj_property name="ElementShortName">Data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv321/dut/dp/rf/enW">
+      <obj_property name="ElementShortName">enW</obj_property>
+      <obj_property name="ObjectShortName">enW</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/rf/register_file">
+      <obj_property name="ElementShortName">register_file[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">register_file[0:31][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="divider3" type="divider">
+      <obj_property name="label">alu</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu/rs1">
+      <obj_property name="ElementShortName">rs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu/rs2">
+      <obj_property name="ElementShortName">rs2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu/opcode">
+      <obj_property name="ElementShortName">opcode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu/rd">
+      <obj_property name="ElementShortName">rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv321/dut/dp/alu/zero">
+      <obj_property name="ElementShortName">zero</obj_property>
+      <obj_property name="ObjectShortName">zero</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv321/dut/dp/alu/less">
+      <obj_property name="ElementShortName">less</obj_property>
+      <obj_property name="ObjectShortName">less</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider3" type="divider">
+      <obj_property name="label"> MUX ALU IN</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu_in/in0">
+      <obj_property name="ElementShortName">in0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu_in/in1">
+      <obj_property name="ElementShortName">in1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_rv321/dut/dp/alu_in/sel">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/alu_in/out">
+      <obj_property name="ElementShortName">out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider3" type="divider">
+      <obj_property name="label">EX ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/ex_mem_alu/data_in">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/ex_mem_alu/data_out">
+      <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider3" type="divider">
+      <obj_property name="label">MUX 4 RES</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/MUXF4/in0">
+      <obj_property name="ElementShortName">in0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/MUXF4/in1">
+      <obj_property name="ElementShortName">in1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/MUXF4/in2">
+      <obj_property name="ElementShortName">in2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/MUXF4/in3">
+      <obj_property name="ElementShortName">in3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in3[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/MUXF4/sel">
+      <obj_property name="ElementShortName">sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/dp/MUXF4/out">
+      <obj_property name="ElementShortName">out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider3" type="divider">
+      <obj_property name="label">Controle</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/MC/exmem_mem_to_reg/data_in">
+      <obj_property name="ElementShortName">data_in[2:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_rv321/dut/MC/exmem_mem_to_reg/data_out">
+      <obj_property name="ElementShortName">data_out[2:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[2:0]</obj_property>
+   </wvobject>
+</wave_config>

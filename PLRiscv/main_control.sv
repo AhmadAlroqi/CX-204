@@ -33,7 +33,7 @@ module control_unit(
             7'b0010011: begin
                 reg_write = 1;
                 mem_write = 0;
-                mem_to_reg = 3'b010;
+                mem_to_reg = 3'b110;
                 alu_op = 3'b011;
                 alu_src = 1;
                 branch = 0;
